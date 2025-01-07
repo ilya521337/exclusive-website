@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exclu7ive</title>
+  <meta name="google-site-verification" content="1PnVbU-6RF7mpzAJBm4a4sU73dhFXjQWHlm6DV_geKw">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(145deg, #ff4500, #ff69b4, #800080);
+      background-size: 200% 200%;
+      animation: gradientAnimation 10s ease infinite;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    nav {
+      margin: 20px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.2s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    nav a:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+      transform: scale(1.1);
+    }
+    section {
+      padding: 20px;
+      display: none;
+      flex-grow: 1;
+    }
+    section.active {
+      display: block;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+    }
+    footer p {
+      margin: 5px 0 0;
+      font-size: 0.85em;
+      color: #ddd;
+    }
+    a {
+      color: #ffdd57;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #ffa500;
+    }
+
+    /* Стиль для баннера */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 16px;
+    }
+
+    #cookie-banner button {
+      background-color: #ff4500;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    #cookie-banner a {
+      color: #ffdd57;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = document.querySelectorAll("nav a");
+      const sections = document.querySelectorAll("section");
+
+      // Показ секций по клику
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          sections.forEach(section => section.classList.remove("active"));
+          target.classList.add("active");
+        });
+      });
+
+      // Открытие первой секции
+      sections[0].classList.add("active");
+
+      // Инициализация новостей
+      const newsSection = document.getElementById("news");
+
+      // Данные для новостей
+      const newsData = [
+        {
+          title: "Новое обновление в Brawl Stars",
+          content: "В игру был добавлен новый временный боец — Базз Лайтер, а также новые скины для персонажей и события, которые подарят игрокам много новых впечатлений. Не пропустите!"
+        },
+        {
+          title: "Дата последнего обновления",
+          content: "11 декабря 2024 года было выпущено обновление, которое привнесло много изменений в игру. Новый боец и свежие события уже доступны для всех игроков."
+        },
+        {
+          title: "Предстоящее обновление",
+          content: "15 января 2025 года планируется выход нового обновления с изменениями в Brawl Pass и новыми игровыми режимами. Мы ожидаем много интересных нововведений!"
+        },
+        {
+          title: "Изменения в балансе персонажей",
+          content: "Обновление принесло изменения для некоторых бойцов. Например, Джесси теперь будет быстрее атаковать, что улучшит её игровую силу в сражениях."
+        },
+        {
+          title: "Новые события",
+          content: "Скоро начнутся новые тематические турниры и испытания с уникальными наградами, которые не оставят равнодушными фанатов Brawl Stars!"
+        },
+        {
+          title: "Зимние праздники в Brawl Stars",
+          content: "Праздничное обновление порадует игроков новыми зимними скинами и акциями. Не упустите шанс получить редкие предметы и бонусы!"
+        }
+      ];
+
+      // Функция для обновления новостей
+      function updateNews() {
+        // Обновление новостей без привязки к дате
+        newsSection.innerHTML = "<h2>Последние новости Brawl Stars</h2>";
+        newsData.forEach(item => {
+          const newsItem = document.createElement("p");
+          const strong = document.createElement("strong");
+          strong.textContent = item.title + ": ";
+          newsItem.appendChild(strong);
+          newsItem.append(item.content);
+          newsSection.appendChild(newsItem);
+        });
+      }
+
+      // Обновление новостей при загрузке страницы
+      updateNews();
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Exclu7ive</h1>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#news">Новости</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+  <section id="about">
+    <h2>О нас</h2>
+    <p>Пока нечего нету.</p>
+  </section>
+  <section id="news">
+    <!-- Новости будут обновляться с помощью JavaScript -->
+  </section>
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p>Наш Telegram:</p>
+    <p>
+      <a href="https://t.me/azern15" target="_blank" style="display: inline-block; background: #ffdd57; color: #000; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">@azern15</a>
+    </p>
+    <p>
+      <a href="https://t.me/Only1TopBot" target="_blank" style="display: inline-block; background: #ffdd57; color: #000; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">@Only1TopBot</a>
+    </p>
+  </section>
+  <footer>
+    <p>© 2024 Exclu7ive. Все права пользователя защищены.</p>
+  </footer>
+</body>
+</html>
