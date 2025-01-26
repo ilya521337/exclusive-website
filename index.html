@@ -70,31 +70,6 @@
     a:hover {
       color: #ffa500;
     }
-
-    /* Стиль для баннера */
-    #cookie-banner {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      font-size: 16px;
-    }
-
-    #cookie-banner button {
-      background-color: #ff4500;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin-left: 20px;
-      cursor: pointer;
-    }
-
-    #cookie-banner a {
-      color: #ffdd57;
-    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -113,54 +88,6 @@
 
       // Открытие первой секции
       sections[0].classList.add("active");
-
-      // Инициализация новостей
-      const newsSection = document.getElementById("news");
-
-      // Данные для новостей
-      const newsData = [
-        {
-          title: "Новое обновление в Brawl Stars",
-          content: "В игру был добавлен новый временный боец — Базз Лайтер, а также новые скины для персонажей и события, которые подарят игрокам много новых впечатлений. Не пропустите!"
-        },
-        {
-          title: "Дата последнего обновления",
-          content: "11 декабря 2024 года было выпущено обновление, которое привнесло много изменений в игру. Новый боец и свежие события уже доступны для всех игроков."
-        },
-        {
-          title: "Предстоящее обновление",
-          content: "15 января 2025 года планируется выход нового обновления с изменениями в Brawl Pass и новыми игровыми режимами. Мы ожидаем много интересных нововведений!"
-        },
-        {
-          title: "Изменения в балансе персонажей",
-          content: "Обновление принесло изменения для некоторых бойцов. Например, Джесси теперь будет быстрее атаковать, что улучшит её игровую силу в сражениях."
-        },
-        {
-          title: "Новые события",
-          content: "Скоро начнутся новые тематические турниры и испытания с уникальными наградами, которые не оставят равнодушными фанатов Brawl Stars!"
-        },
-        {
-          title: "Зимние праздники в Brawl Stars",
-          content: "Праздничное обновление порадует игроков новыми зимними скинами и акциями. Не упустите шанс получить редкие предметы и бонусы!"
-        }
-      ];
-
-      // Функция для обновления новостей
-      function updateNews() {
-        // Обновление новостей без привязки к дате
-        newsSection.innerHTML = "<h2>Последние новости Brawl Stars</h2>";
-        newsData.forEach(item => {
-          const newsItem = document.createElement("p");
-          const strong = document.createElement("strong");
-          strong.textContent = item.title + ": ";
-          newsItem.appendChild(strong);
-          newsItem.append(item.content);
-          newsSection.appendChild(newsItem);
-        });
-      }
-
-      // Обновление новостей при загрузке страницы
-      updateNews();
     });
   </script>
 </head>
@@ -175,10 +102,11 @@
   </header>
   <section id="about">
     <h2>О нас</h2>
-    <p>Пока нечего нету.</p>
+    <p>СКОРО</p>
   </section>
   <section id="news">
-    <!-- Новости будут обновляться с помощью JavaScript -->
+    <h2>Новости</h2>
+    <p>СКОРО</p>
   </section>
   <section id="contacts">
     <h2>Контакты</h2>
